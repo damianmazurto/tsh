@@ -1,0 +1,66 @@
+<div class="container">
+
+<div class="text-center-shadow">
+  <div class="text-center">
+    <section class="top">
+      <h1>Where your money goes</h1>
+      <p>Payments made by Chichester District Council to individual suppliers with a value over &pound;500 made within October.</p>
+    </section>
+
+  <hr>
+
+  <form class="form-inline" style="z-index:10">
+   <fieldset>
+  <input type="text" class="form-control tsh-supplier-search" placeholder="Search suppliers" ng-model="query">
+
+  <span class="form-control tsh-pound-rating-container">
+      <input pound-spinner  placeholder="Select pound rating" ng-model="rating">
+  </span>
+
+
+   <button class="btn-tsh-reset " ng-click="doReset()">Reset</button> <button class="btn-tsh" ng-click="doSearch()">Search</button>
+   </fieldset>
+  </form>
+ <br/><br/><br/>
+ <div class="table-container">
+                    <table class="col-sm-12 table-striped table-condensed cf">
+                    <thead class="cf">
+                      <tr>                    
+                       <th>Supplier</th><th class="pound-rating">Pound rating</th><th class="payment-ref">Reference</th><th class="payment-amount">Value</th>
+                      </tr>
+                    </thead>                    
+                    <tbody>
+                      <tr class="payment-item" ng-click="details({{key}})" ng-repeat="(key,payment) in tshMoney.payments">                    
+                        <td>{{payment.payment_supplier}}</td>
+                        <td class="pound-rating">
+
+                           <div pound-rating rating-value="payment.payment_cost_rating" max="5" ></div>
+                          
+
+                        </td>
+                        <td class="payment-ref">{{payment.payment_ref}}</td>
+                        <td class="payment-amount">{{payment.payment_amount | currency: "£":0}}</td>                    
+                      </tr>
+                      
+                     </tbody>
+              </table>
+
+
+
+  </div>
+
+    <div ng-show="dialog_show" id="details" title="Details" ui-jq="dialog">
+      <table class="col-sm-12 table-striped table-condensed cf">
+      <tr><td><strong>Supplier</strong></td><td>{{tshMoney.payments[index].payment_supplier}}</td></tr>
+      <tr><td><strong>Pound rating</td><td>{{tshMoney.payments[index].payment_cost_rating}}</td></tr>
+      <tr><td><strong>Reference</td><td>{{tshMoney.payments[index].payment_ref}} </td></tr>
+      <tr><td><strong>Value</td><td>{{tshMoney.payments[index].payment_amount | currency: "£":0}} </td></tr>
+      </table>
+  
+    </div>
+
+  <pagination max-size="4" total-items="tshMoney.pagination.total*5" ng-model="tshMoney.currentPage" ng-change="pageChanged()" items-per-page="5" previous-text="<" next-text=">"></pagination>  
+
+   
+</div>
+</div>
