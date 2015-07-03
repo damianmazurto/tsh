@@ -21,8 +21,7 @@ html, body {
   width: 50px;
 }
 
-
-section.top {
+.top_item {
   margin-bottom: 0px;
   padding: 1px 10px;
   background-color: #fdfdfd;
@@ -32,7 +31,7 @@ section.top {
   color: #3b3b3b;
 }
 
-section.top h1 {
+.top_item h1 {
   font-size: 60px;
   color: #2288b7;
   font-weight: 300;
@@ -224,7 +223,6 @@ background: -o-linear-gradient(top, #7db9e8 0%,#2989d8 50%,#1f76f0 100%); /* Ope
 background: -ms-linear-gradient(top, #7db9e8 0%,#2989d8 50%,#1f76f0 100%); /* IE10+ */
 background: linear-gradient(to bottom, #7db9e8 0%,#2989d8 50%,#1f76f0 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1f76f0',GradientType=0 ); /* IE6-8 */
-copy
 
 }
 
@@ -380,7 +378,6 @@ input[type=number]::-webkit-outer-spin-button {
    background-color: transparent;
 }
 
-
 .text-center
 {
 	background-color: #fdfdfd;
@@ -400,41 +397,17 @@ input[type=number]::-webkit-outer-spin-button {
   width: 88%;
   border-radius:5px;
 }
-/*
-.text-center:before
-{
-  position: absolute;
-  content: '';  
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  border-radius: 1px;
-  box-shadow: 0px 1px 0px 8px rgba(0,0,0, 0.05);
-  -webkit-box-shadow: 0px 1px 0px 8px rgba(0,0,0, 0.05);
-}
-*/
-
-hr
-{
-
-}
-
-.table-container
-{
-
-}
 
 @media (min-width: 768px) {
 .col-sm-12 {
   width: 100%;
-	}
+  }
 }
 
 @media (min-width: 768px) {
   .tsh-pound-rating-container {
   max-width: 170px;
-  margin-left: 
+  margin-left: 0px;
 }
 }
 
@@ -442,9 +415,9 @@ hr
   .tsh-pound-rating-container {  
   margin-left: 0px; 
 }
-  .tsh-supplier-search	
+  .tsh-supplier-search  
   {
-  	min-width: 0px;
+    min-width: 0px;
   }
 }
 
@@ -452,9 +425,9 @@ hr
   .tsh-pound-rating-container {  
   margin-bottom:10px;
 }
-  .tsh-supplier-search	
+  .tsh-supplier-search  
   {
-  	margin-bottom:10px;
+    margin-bottom:10px;
   }
 }
 
@@ -513,7 +486,7 @@ hr
         .table-condensed .payment-ref,
         .table-condensed .pound-rating,
         .table-condensed .payment-amount {
-  			width: 100%;
-  			text-align:center;
-			}
-        }
+        width: 100%;
+        text-align:center;
+      }
+ }
